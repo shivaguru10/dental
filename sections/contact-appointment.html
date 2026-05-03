@@ -1,0 +1,140 @@
+<!-- ============================================
+     APPOINTMENT & CONTACT SECTION
+     ============================================ -->
+<section id="appointment" class="section contact-section scroll-reveal">
+    <div class="container">
+        <div class="contact-grid">
+
+            <!-- FAQ & Info -->
+            <div class="contact-info">
+                <h4>Get In Touch</h4>
+                <h2>Frequently Asked Questions</h2>
+
+                <!-- FAQ Accordion -->
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-btn" type="button">
+                            Do you accept dental insurance?
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="faq-content">
+                            Please call the clinic directly to confirm insurance or reimbursement support for your treatment needs.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-btn" type="button">
+                            What should I expect on my first visit?
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="faq-content">
+                            Expect a clear consultation, case review, and a patient explanation of what treatment is needed and what your next step should be.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-btn" type="button">
+                            How quickly will someone respond after I submit?
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="faq-content">
+                            The form and WhatsApp request are designed for same-day follow-up during clinic working hours. You can also call directly for urgent dental concerns.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Details -->
+                <div id="contact" class="contact-details">
+                    <h3>Contact Information</h3>
+                    <ul>
+                        <li>
+                            <div class="icon primary"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <h4>Location</h4>
+                                <p data-clinic="address">Clinic address to be updated before launch.<br>City, State, PIN</p>
+                                <p class="contact-subline" data-clinic="plus-code">8XVR+V4 Kullanampatty, Tamil Nadu, India</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon secondary"><i class="fas fa-phone-alt"></i></div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p><a href="tel:+919790491904" data-clinic-link="phone" data-clinic="phone">+91 97904 91904</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon primary"><i class="fas fa-clock"></i></div>
+                            <div>
+                                <h4>Hours</h4>
+                                <p data-clinic="hours">Monday to Friday: 9:00 AM - 7:00 PM<br>Saturday: 9:00 AM - 2:00 PM</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Appointment Form -->
+            <div class="appointment-form-wrapper">
+                <div class="form-decoration"></div>
+                <h3>Book An Appointment</h3>
+                <p>Fill out the form below and we will prepare a WhatsApp-ready request using Aadiv Dental Clinic's live contact details.</p>
+
+                <form id="appointment-form" class="appointment-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" required placeholder="John Doe" autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number <span class="required">*</span></label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+91 98765 43210" autocomplete="tel">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com" autocomplete="email">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="appointment-date">Preferred Date</label>
+                            <input type="date" id="appointment-date" name="appointment-date">
+                        </div>
+                        <div class="form-group">
+                            <label for="preferred-time">Preferred Time</label>
+                            <select id="preferred-time" name="preferred-time">
+                                <option value="">Select a Time</option>
+                                <option value="Morning">Morning</option>
+                                <option value="Afternoon">Afternoon</option>
+                                <option value="Evening">Evening</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Service Needed <span class="required">*</span></label>
+                        <select id="service" name="service" required>
+                            <option value="" disabled selected>Select a Service</option>
+                            <option value="General checkup">General Checkup</option>
+                            <option value="Teeth Cleaning">Teeth Cleaning</option>
+                            <option value="Whitening">Teeth Whitening</option>
+                            <option value="Implant">Dental Implants</option>
+                            <option value="Braces">Braces/Invisalign</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message (Optional)</label>
+                        <textarea id="message" name="message" rows="3" placeholder="Is there anything specific we should know?"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">
+                        <i class="fas fa-calendar-check"></i> Send Appointment Request
+                    </button>
+                    <p class="form-note" data-clinic="booking-note">Appointments are confirmed by the clinic team during working hours.</p>
+                    <p id="form-message" class="form-message"></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
