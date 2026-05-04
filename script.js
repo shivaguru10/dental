@@ -259,6 +259,14 @@ document.addEventListener('componentsLoaded', () => {
 
     if (form && formMessage) {
         const appointmentDateEl = document.getElementById('appointment-date');
+        const phoneInputEl = document.getElementById('phone');
+
+        if (phoneInputEl) {
+            phoneInputEl.addEventListener('input', () => {
+                phoneInputEl.value = phoneInputEl.value.replace(/\D/g, '').slice(0, 10);
+            });
+        }
+
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             
@@ -269,8 +277,11 @@ document.addEventListener('componentsLoaded', () => {
             const preferredTimeEl = document.getElementById('preferred-time');
             const messageEl = document.getElementById('message');
 
-            const phoneValue = phoneEl ? phoneEl.value.trim() : '';
-            const isPhoneValid = /^[+()\d\s-]{8,}$/.test(phoneValue);
+            const phoneValue = phoneEl ? phoneEl.value.replace(/\D/g, '').slice(0, 10) : '';
+            if (phoneEl) {
+                phoneEl.value = phoneValue;
+            }
+            const isPhoneValid = /^\d{10}$/.test(phoneValue);
 
             if (nameEl && phoneEl && serviceEl && nameEl.value.trim() && isPhoneValid && serviceEl.value) {
                 const appointmentDate = appointmentDateEl && appointmentDateEl.value
@@ -317,7 +328,7 @@ document.addEventListener('componentsLoaded', () => {
                     formMessage.className = 'form-message';
                 }, 5000);
             } else {
-                formMessage.textContent = 'Please enter your name, a valid phone number, and the service you need.';
+                formMessage.textContent = 'Please enter your name, a 10 digit phone number, and the service you need.';
                 formMessage.className = 'form-message error';
             }
         });
@@ -348,22 +359,49 @@ document.addEventListener('componentsLoaded', () => {
     // ============================================
     // Smooth Scroll for Anchor Links
     // ============================================
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-            if (href !== '#') {
-                e.preventDefault();
-                const target = document.querySelector(href);
-                if (target) {
-                    const navbarHeight = navbar ? navbar.offsetHeight : 80;
-                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            }
+    const getAnchorTarget = (href) => {
+        if (href === '#appointment' || href === '#book-appointment') {
+            return document.getElementById('book-appointment')
+                || document.getElementById('appointment-form')
+                || document.getElementById('appointment');
+        }
+
+        try {
+            return document.querySelector(href);
+        } catch (error) {
+            return null;
+        }
+    };
+
+    const scrollToAnchorTarget = (target) => {
+        const navbarHeight = navbar ? navbar.offsetHeight : 80;
+        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight - 10;
+
+        window.scrollTo({
+            top: Math.max(targetPosition, 0),
+            behavior: 'smooth'
         });
+    };
+
+    document.addEventListener('click', (e) => {
+        const anchor = e.target.closest('a[href^="#"]');
+        if (!anchor) return;
+
+        const href = anchor.getAttribute('href');
+        if (!href || href === '#') return;
+
+        const target = getAnchorTarget(href);
+        if (!target) return;
+
+        e.preventDefault();
+        scrollToAnchorTarget(target);
     });
+
+    if (window.location.hash === '#appointment' || window.location.hash === '#book-appointment') {
+        const target = getAnchorTarget(window.location.hash);
+        if (target) {
+            setTimeout(() => scrollToAnchorTarget(target), 150);
+        }
+    }
 
 });
