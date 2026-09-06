@@ -34,7 +34,7 @@ const COMPONENTS = [
  */
 async function loadComponent(containerId, filePath) {
     try {
-        const response = await fetch(filePath);
+        const response = await fetch(filePath, { cache: 'no-store' });
         if (!response.ok) {
             throw new Error(`Failed to load ${filePath}: ${response.statusText}`);
         }

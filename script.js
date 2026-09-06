@@ -179,6 +179,38 @@ document.addEventListener('componentsLoaded', () => {
     }
 
     // ============================================
+    // WhatsApp Booking Guide
+    // ============================================
+    const whatsappBtn = document.querySelector('.whatsapp-btn');
+    const whatsappGuide = document.getElementById('whatsapp-guide');
+    const whatsappGuideClose = document.getElementById('whatsapp-guide-close');
+
+    if (whatsappBtn && whatsappGuide) {
+        let whatsappGuideTimer = window.setTimeout(() => {
+            whatsappGuide.classList.add('visible');
+            whatsappGuide.setAttribute('aria-hidden', 'false');
+        }, 5000);
+
+        const closeWhatsappGuide = () => {
+            window.clearTimeout(whatsappGuideTimer);
+            whatsappGuide.classList.remove('visible');
+            whatsappGuide.setAttribute('aria-hidden', 'true');
+        };
+
+        if (whatsappGuideClose) {
+            whatsappGuideClose.addEventListener('click', closeWhatsappGuide);
+        }
+
+        whatsappBtn.addEventListener('click', closeWhatsappGuide);
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeWhatsappGuide();
+            }
+        });
+    }
+
+    // ============================================
     // Scroll Reveal Animation
     // ============================================
     const scrollElements = document.querySelectorAll('.scroll-reveal');
