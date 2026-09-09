@@ -8,7 +8,7 @@ window.CLINIC_PROFILE = {
     email: '',
     addressHtml: 'Sastri Nagar, Kullanampatty,<br>Tamil Nadu 624003, India',
     plusCode: '8XVR+V4 Kullanampatty, Tamil Nadu, India',
-    hoursHtml: 'Monday to Saturday: Opens at 9:00 AM<br>Sunday: Closed',
+    hoursHtml: 'Monday to Saturday: 9-2 ,Evening 5 - 9 PM <br>Sunday: Morning 10 - 2 PM',
     mapUrl: 'https://maps.google.com/?q=Aadiv+Dental+Clinic+Kullanampatty+Tamil+Nadu+624003',
     bookingNote: 'Appointment requests are followed up by the clinic during working hours.',
     heroBadge: '5.0 Google Rating',
@@ -16,7 +16,7 @@ window.CLINIC_PROFILE = {
     heroDescription: 'Comfortable treatment, clear guidance, and thoughtful care for families in Dindigul.',
     leadDoctorName: 'Dr. G. Deepika Arun, B.D.S.',
     leadDoctorTitle: 'Dental Surgeon • Aadiv Dental Clinic',
-    leadDoctorBio: 'Known by patients for a calm, patient approach and gentle treatment style, Dr. Deepika leads Aadiv Dental Clinic with a strong focus on comfort, affordability, and clear care plans.',
+    leadDoctorBio: 'Known by patients for a calm approach and gentle treatment style, Dr. Deepika leads Aadiv Dental Clinic with a strong focus on comfort, affordability, and clear care plans.',
     aboutRating: '5.0 / 5.0 Rating',
     aboutRatingNote: 'Based on 67 Google reviews',
     stats: {
