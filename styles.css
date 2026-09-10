@@ -1804,6 +1804,9 @@ input, textarea, select {
     display: block;
 }
 
+.case-card-patient1 .case-comparison-shot img {
+    object-position: center 36%;
+}
 
 .case-detail-strip {
     display: grid;
