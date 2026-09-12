@@ -34,7 +34,8 @@ const COMPONENTS = [
  */
 async function loadComponent(containerId, filePath) {
     try {
-        const response = await fetch(filePath, { cache: 'no-store' });
+        const cacheBustUrl = filePath.includes('?') ? `${filePath}&_t=${Date.now()}` : `${filePath}?_t=${Date.now()}`;
+        const response = await fetch(cacheBustUrl, { cache: 'no-store' });
         if (!response.ok) {
             throw new Error(`Failed to load ${filePath}: ${response.statusText}`);
         }

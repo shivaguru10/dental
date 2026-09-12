@@ -6,7 +6,7 @@ window.CLINIC_PROFILE = {
     phoneHref: 'tel:+919790491904',
     whatsappNumber: '919790491904',
     email: '',
-    addressHtml: 'Sastri Nagar, Kullanampatty,<br>Tamil Nadu 624003, India',
+    addressHtml: 'Indian oil petrol bunk opp , kullanampatti busstop natham road',
     plusCode: '8XVR+V4 Kullanampatty, Tamil Nadu, India',
     hoursHtml: 'Monday to Saturday: 9-2 ,Evening 5 - 9 PM <br>Sunday: Morning 10 - 2 PM',
     mapUrl: 'https://maps.google.com/?q=Aadiv+Dental+Clinic+Kullanampatty+Tamil+Nadu+624003',

@@ -44,14 +44,18 @@
     <div id="footer-container"></div>
     <div id="floating-elements-container"></div>
 
-    <script src="js/clinic-profile.js"></script>
+    <script>
+        window.CLINIC_PROFILE = window.CLINIC_PROFILE || {};
+        window.CLINIC_PROFILE.addressHtml = 'Indian oil petrol bunk opp , kullanampatti busstop natham road';
+    </script>
+    <script src="js/clinic-profile.js?v=20260912-addr"></script>
 
     <!-- ============================================
          COMPONENT LOADER SCRIPT
          ============================================ -->
-    <script src="js/component-loader.js?v=doctor-update"></script>
+    <script src="js/component-loader.js?v=20260912-addr"></script>
 
     <!-- Main JavaScript -->
-    <script src="script.js?v=whatsapp-guide"></script>
+    <script src="script.js?v=20260912-addr"></script>
 </body>
 </html>

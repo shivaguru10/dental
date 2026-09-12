@@ -33,7 +33,9 @@ document.addEventListener('componentsLoaded', () => {
 
     setText('[data-clinic="name-tamil"]', clinicProfile.clinicNameTamil);
     setText('[data-clinic="phone"]', clinicProfile.phoneDisplay);
-    setText('[data-clinic="email"]', clinicProfile.email);
+    if (!clinicProfile.addressHtml || clinicProfile.addressHtml.includes('Sastri Nagar')) {
+        clinicProfile.addressHtml = 'Indian oil petrol bunk opp , kullanampatti busstop natham road';
+    }
     setHtml('[data-clinic="address"]', clinicProfile.addressHtml);
     setHtml('[data-clinic="hours"]', clinicProfile.hoursHtml);
     setText('[data-clinic="plus-code"]', clinicProfile.plusCode);
